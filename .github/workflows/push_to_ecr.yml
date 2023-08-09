@@ -20,7 +20,7 @@ env:
   APPLICATION_ECR_PREFIX: app-image
   DATABASE_ECR_PREFIX: database-image
   ECR_REPOSITORY: clo835-final-project
-  WORKING_DIR: App/
+  WORKING_DIR: Application/
   AWS_REGION: us-east-1
 jobs:
   deploy:
