@@ -23,9 +23,6 @@ jobs:
           AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
           AWS_REGION: us-east-1
 
-      - name: Print AWS ECR login command
-        run: echo "ECR login command: ${{ steps.login-ecr.outputs.login-command }}"
-
       - name: Build, test, tag, and push MySQL image to Amazon ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
