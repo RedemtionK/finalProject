@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -18,7 +19,7 @@ spec:
     spec:
       containers:
         - name: mysql-container
-          image: 
+          image: 699068936389.dkr.ecr.us-east-1.amazonaws.com/mysql-images:v0.1
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
@@ -27,10 +28,4 @@ spec:
                   key: password
           ports:
             - containerPort: 3306
-          volumeMounts:
-            - name: mysql-storage
-              mountPath: /var/lib/mysql
-      volumes:
-      - name: mysql-storage
-        persistentVolumeClaim:
-          claimName: mysql
+      
